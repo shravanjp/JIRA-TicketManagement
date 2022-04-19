@@ -64,6 +64,7 @@ function createTicket(ticketColor, ticketID, ticketTask) {
     mainContainer.appendChild(ticketLock);
     handleRemove(ticketLock);
     handleLock(ticketLock);
+    handleColor(ticketLock);
 }
 
 function handleRemove(ticketLock){
@@ -71,6 +72,7 @@ function handleRemove(ticketLock){
         ticketLock.remove();
     }
 }
+
 function handleLock(ticketContainer){
     let ticketLockElement = ticketContainer.querySelector(".ticket-lock");
     let ticketLock = ticketLockElement.children[0];
@@ -82,8 +84,28 @@ function handleLock(ticketContainer){
             ticketTaskArea.setAttribute("contenteditable",true);
         } else {
             ticketLock.classList.remove(unlockClass);
+            ticketTaskArea.setAttribute("contenteditable",false);
             ticketLock.classList.add(lockClass);
-            ticketTaskArea.setAttribute("contenteditable",true);
+        }
+    })
+
+}
+
+function handleColor(ticketContainer){
+    let ticketColor = ticketContainer.querySelector(".ticket-color");
+    let ticketLockElement = ticketContainer.querySelector(".ticket-lock");
+    let ticketLock = ticketLockElement.children[0];
+    ticketColor.addEventListener("click",(e)=>{
+        if(ticketLock.classList.contains("fa-unlock")){
+            let currentTicketColor = ticketColor.classList[1];
+            let currentTicketColorIdx = colors.findIndex((color) => {
+            return currentTicketColor === color;
+            })
+            currentTicketColorIdx++;
+            let newTicketColorIdx = (currentTicketColorIdx) % colors.length;
+            let newTicketColor = colors[newTicketColorIdx];
+            ticketColor.classList.remove(currentTicketColor);
+            ticketColor.classList.add(newTicketColor);
         }
     })
 }
