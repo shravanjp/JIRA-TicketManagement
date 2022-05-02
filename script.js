@@ -18,6 +18,8 @@ let removeFlag = false;
 let lockClass = "fa-lock";
 let unlockClass = "fa-unlock";
 
+setModalToDefault();
+
 for (let i = 0; i < toolboxColor.length; i++) {
     toolboxColor[i].addEventListener("click", (e) => {
         let currentToolboxColor = toolboxColor[i].classList[1];
@@ -71,10 +73,8 @@ allPriorityColor.forEach((colorElem, index) => {
 
 okBtn.addEventListener("click", (e) => {
   createTicket(modalPriorityColor, textAreaContainer.value);
-  modalContainer.style.display = "none";
   addFlag = false;
-  textAreaContainer.value = "";
-  mainContainer.style.display = "flex";
+  setModalToDefault();
 });
 
 function createTicket(ticketColor, ticketTask, ticketID) {
@@ -95,42 +95,63 @@ function createTicket(ticketColor, ticketTask, ticketID) {
     `;
     mainContainer.appendChild(ticketLock);
 
-    if (ticketID == undefined)
+    if (ticketID === undefined){
         ticketsArr.push({ ticketColor, ticketTask, idCTicket });
+        localStorage.setItem("jira_tickets",JSON.stringify(ticketsArr));
+    }
 
-  handleRemove(ticketLock);
-  handleLock(ticketLock);
-  handleColor(ticketLock);
+    handleRemove(ticketLock,idCTicket);
+    handleLocks(ticketLock,idCTicket);
+    handleColor(ticketLock,idCTicket);
 }
 
-function handleRemove(ticketLock) {
-  if (removeFlag) {
-    ticketLock.remove();
-  }
+function handleRemove(ticketLock,id) {
+  
+    ticketLock.addEventListener("click",(e)=>{
+      if (removeFlag) {
+        //local storage removal
+        let ticketIndex = getTicketIndex(id);
+        ticketsArr.slice(ticketIndex,1);
+        localStorage.setItem("jira_tickets",JSON.stringify(ticketsArr));
+        //ui removal
+        ticketLock.remove();
+      }
+    })
 }
 
-function handleLock(ticketContainer) {
+
+function handleLocks(ticketContainer, id) {
   let ticketLockElement = ticketContainer.querySelector(".ticket-lock");
   let ticketLock = ticketLockElement.children[0];
   let ticketTaskArea = ticketContainer.querySelector(".task-area");
-  ticketLock.addEventListener("click", (e) => {
+  ticketLock.addEventListener("click",(e) => {
+    let ticketIndex = getTicketIndex(id);
     if (ticketLock.classList.contains(lockClass)) {
       ticketLock.classList.remove(lockClass);
       ticketLock.classList.add(unlockClass);
       ticketTaskArea.setAttribute("contenteditable", true);
+    
     } else {
       ticketLock.classList.remove(unlockClass);
       ticketTaskArea.setAttribute("contenteditable", false);
       ticketLock.classList.add(lockClass);
+      ticketsArr[ticketIndex].ticketTask= ticketTaskArea.innerText;
+      localStorage.setItem("jira_tickets",JSON.stringify(ticketsArr));
     }
   });
+
+  
 }
 
-function handleColor(ticketContainer) {
+function handleColor(ticketContainer, id) {
   let ticketColor = ticketContainer.querySelector(".ticket-color");
   let ticketLockElement = ticketContainer.querySelector(".ticket-lock");
   let ticketLock = ticketLockElement.children[0];
-  ticketColor.addEventListener("click", (e) => {
+  ticketColor.addEventListener("click",(e) => {
+
+    //get the index of the ticketID from the ticketsArr
+    let ticketIndex = getTicketIndex(id);
+
     if (ticketLock.classList.contains("fa-unlock")) {
       let currentTicketColor = ticketColor.classList[1];
       let currentTicketColorIdx = colors.findIndex((color) => {
@@ -141,6 +162,29 @@ function handleColor(ticketContainer) {
       let newTicketColor = colors[newTicketColorIdx];
       ticketColor.classList.remove(currentTicketColor);
       ticketColor.classList.add(newTicketColor);
+
+      //Update the changes to local storage(priority color change)
+      ticketsArr[ticketIndex].ticketColor = newTicketColor;
+      localStorage.setItem("jira_tickets",JSON.stringify(ticketsArr)); 
+
     }
   });
+}
+
+function getTicketIndex(id){
+  let index = ticketsArr.findIndex((ticketObj)=>{
+    return ticketObj.idCTicket === id;
+  });
+  return index;
+}
+
+function setModalToDefault(){
+  modalPriorityColor = allPriorityColor[allPriorityColor.length-1].classList[0];
+  modalContainer.style.display = "none";
+  textAreaContainer.value = "";
+  mainContainer.style.display = "flex";
+  allPriorityColor.forEach((priorityColorElem, index) => {
+    priorityColorElem.classList.remove("border");
+  });
+  allPriorityColor[allPriorityColor.length-1].classList.add("border");
 }
