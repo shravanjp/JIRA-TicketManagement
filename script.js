@@ -7,9 +7,11 @@ let textAreaContainer = document.querySelector(".textarea-container");
 let lockBtnContainer = document.querySelector(".ticket-lock");
 let allPriorityColor = document.querySelectorAll(".priority-color");
 let toolboxColor = document.querySelectorAll(".color");
+let displayAll = document.querySelector(".display-all");
 
 let colors = ["red", "yellow", "blue", "green"];
 let ticketsArr = [];
+
 
 let modalPriorityColor = colors[colors.length - 1];
 let addFlag = false;
@@ -19,6 +21,14 @@ let lockClass = "fa-lock";
 let unlockClass = "fa-unlock";
 
 setModalToDefault();
+
+//if there is data in the local storage
+if(localStorage.getItem("jira_tickets")){
+  ticketsArr = JSON.parse(localStorage.getItem("jira_tickets"));
+  ticketsArr.forEach((ticketObj) => {
+    createTicket(ticketObj.ticketColor,ticketObj.ticketTask,ticketObj.idCTicket);
+  })
+}
 
 for (let i = 0; i < toolboxColor.length; i++) {
     toolboxColor[i].addEventListener("click", (e) => {
@@ -47,6 +57,17 @@ for (let i = 0; i < toolboxColor.length; i++) {
     });
 }
 
+displayAll.addEventListener("click", (e) => {
+  let allTicketContainer = document.querySelectorAll(".ticket-container");
+  for (let i = 0; i < allTicketContainer.length; i++) {
+      allTicketContainer[i].remove();
+  }
+
+  ticketsArr.forEach((curVal,idx) => {
+      createTicket(curVal.ticketColor,curVal.ticketTask,curVal.idCTicket);
+  })
+});
+
 addBtn.addEventListener("click", (e) => {
   addFlag = !addFlag;
   if (addFlag) {
@@ -59,6 +80,12 @@ addBtn.addEventListener("click", (e) => {
 
 removeBtn.addEventListener("click", (e) => {
   removeFlag = !removeFlag;
+  if(removeFlag){
+    removeBtn.classList.add("remove-btn-click");
+  }
+  else{
+    removeBtn.classList.remove("remove-btn-click");
+  }
 });
 
 allPriorityColor.forEach((colorElem, index) => {
@@ -111,7 +138,7 @@ function handleRemove(ticketLock,id) {
       if (removeFlag) {
         //local storage removal
         let ticketIndex = getTicketIndex(id);
-        ticketsArr.slice(ticketIndex,1);
+        ticketsArr.splice(ticketIndex,1);
         localStorage.setItem("jira_tickets",JSON.stringify(ticketsArr));
         //ui removal
         ticketLock.remove();
