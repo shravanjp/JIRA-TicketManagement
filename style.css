@@ -16,7 +16,7 @@ body{
 }
 .toolbox-priority-container{
     height: 2.5rem;
-    width:15rem;
+    width:20rem;
     background-color: #718093;
     display: flex;
     justify-content: space-around;
@@ -55,11 +55,24 @@ body{
 .green{
     background-color: #44bd32;
 }
+.display-all{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    border-radius: 3px;
+    color: white;
+    font-weight:bold;
+    background-color: rgb(59, 58, 58);
+}
 .add-btn:hover{
     color: #1abc9c;
 }
 .remove-btn:hover{
     color:#e74c3c
+}
+.remove-btn-click{
+    color:#e74c3c;
 }
 .modal-container{
     position: absolute;
