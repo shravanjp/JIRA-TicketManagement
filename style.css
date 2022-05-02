@@ -163,9 +163,9 @@ body{
     }
     .modal-container{
         height: 60vh;
-        width: 65vw;
+        width: 80vw;
         top: calc( ( 100vh - 50vh ) / 2);
-        left: calc( ( 100vw - 65vw ) / 2);
+        left: calc( ( 100vw - 80vw ) / 2);
     }
     .priority-color{
         height: 2.3rem;
@@ -215,9 +215,9 @@ body{
 
     .modal-container{
         height: 60vh;
-        width: 70vw;
+        width: 85vw;
         top: calc( ( 100vh - 50vh ) / 2);
-        left: calc( ( 100vw - 70vw ) / 2);
+        left: calc( ( 100vw - 85vw ) / 2);
     }
     .priority-color{
         height: 2.1rem;
@@ -246,9 +246,9 @@ body{
 
     .modal-container{
         height: 60vh;
-        width: 80vw;
+        width: 90vw;
         top: calc( ( 100vh - 50vh ) / 2);
-        left: calc( ( 100vw - 65vw ) / 2);
+        left: calc( ( 100vw - 90vw ) / 2);
     }
     .priority-color{
         height: 1.8rem;
