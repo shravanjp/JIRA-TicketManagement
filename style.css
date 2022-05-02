@@ -117,6 +117,7 @@ body{
 .ticket-container{
     height: 12rem;
     width: 17rem;
+    padding-bottom: 2rem;
 }
 
 .ticket-color{
@@ -151,4 +152,107 @@ body{
     flex-wrap: wrap;
     margin: 2rem;
     gap: 2rem;
+}
+
+@media screen and (min-width: 425px) and (max-width: 675px) {
+    .toolbox-container > * {
+        margin-left: 2rem;
+    }
+    .action-btn-container{
+        margin-right: 2rem;
+    }
+    .modal-container{
+        height: 60vh;
+        width: 65vw;
+        top: calc( ( 100vh - 50vh ) / 2);
+        left: calc( ( 100vw - 65vw ) / 2);
+    }
+    .priority-color{
+        height: 2.3rem;
+        width: 3.0rem;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 675px) and (max-width: 1024px) {
+    .toolbox-container > * {
+        margin-left: 4rem;
+    }
+    .action-btn-container{
+        margin-left: 1rem;
+        margin-right: 4rem;
+    }
+    .priority-color{
+        height: 2.3rem;
+        width: 3.0rem;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 325px) and (max-width: 425px) {
+
+    /* .action-btn-container > *{
+        font-size: 1.5rem;
+        margin-right: 1rem;
+    } */
+
+    .toolbox-container > * {
+        margin-left: 0.75rem;
+    }
+    .action-btn-container{
+        margin-right: 0.75rem;
+    }
+
+    .toolbox-priority-container{
+        height: 2.5rem;
+        width:20rem;
+        background-color: #718093;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 5px;
+    }
+
+    .modal-container{
+        height: 60vh;
+        width: 70vw;
+        top: calc( ( 100vh - 50vh ) / 2);
+        left: calc( ( 100vw - 70vw ) / 2);
+    }
+    .priority-color{
+        height: 2.1rem;
+        width: 2.8rem;
+        border-radius: 4px;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 325px) {
+
+    .color{
+        height: 1.0rem;
+        width: 1.0rem;
+        border-radius: 17px;
+    }
+
+    .toolbox-container{
+        height: 4rem;
+    }
+    .toolbox-container > * {
+        margin-left: 1rem;
+    }
+    .action-btn-container{
+        margin-right: 0.75rem;
+    }
+
+    .modal-container{
+        height: 60vh;
+        width: 80vw;
+        top: calc( ( 100vh - 50vh ) / 2);
+        left: calc( ( 100vw - 65vw ) / 2);
+    }
+    .priority-color{
+        height: 1.8rem;
+        width: 2.5rem;
+        border-radius: 3px;
+    }
 }
