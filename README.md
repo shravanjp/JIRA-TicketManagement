@@ -43,8 +43,8 @@ https://shravanjp.github.io/JIRA-TicketManagement/
       <th style="text-align:center">Filtering</th>
     </tr>
     <tr>
-    <td>![Create Ticket](https://github.com/shravanjp/JIRA-TicketManagement/blob/main/assets/createTicket.gif)</td>
-    <td>![Create Ticket](https://github.com/shravanjp/JIRA-TicketManagement/blob/main/assets/filter.gif)</td>
+    <td>(https://github.com/shravanjp/JIRA-TicketManagement/blob/main/assets/createTicket.gif)</td>
+    <td>(https://github.com/shravanjp/JIRA-TicketManagement/blob/main/assets/filter.gif)</td>
     </tr>
    </table>
    <table>
