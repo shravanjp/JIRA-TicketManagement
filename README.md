@@ -21,12 +21,6 @@ This project tracks the task/issue that is created and also each task is assigne
 **Client:** Javascript, CSS, HTML
 
 
-
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
 ## How to Use
 
 Website Link
@@ -39,6 +33,45 @@ https://shravanjp.github.io/JIRA-TicketManagement/
 - To modify the task click on **unlock**, modify then again click on **unlock**.
 - To filter, you can use **color(priority)** present in the navbar.
 - To delete the task/ticket click on the **⨯ (hamburger)** symbol, then click on the delete.**(Don't forget to again click on **⨯** after deleting)**
+
+
+## Screenshots
+
+<table>
+  <tr>
+     <th style="text-align:center">Creating Ticket</th>
+      <th style="text-align:center">Filtering</th>
+    </tr>
+    <tr>
+    <td><img src="https://github.com/shravanjp/JIRA-TicketManagement/blob/main/assets/createTicket.gif"></td>
+    <td><img src="https://github.com/shravanjp/JIRA-TicketManagement/blob/main/assets/filter.gif"></td>
+    </tr>
+   </table>
+   <table>
+    <tr>
+     <th style="text-align:center">Preview Page</th>
+     <th style="text-align:center">Save to Device Dialog Box</th>
+      <th style="text-align:center">Saved Details Page</th>
+    </tr>
+    <tr>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/previewpage.jpg" width="200" height="320"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/savetodevice.jpg" width="200" height="320"></td>
+    <td><img src="https://github.com/shravanjp/Lenz/blob/master/app/src/main/res/drawable/saveddetails.jpg" width="200" height="320"></td>
+    </tr>
+ 
+ </table>
+
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+## Demo
+
+![Create Ticket](https://github.com/shravanjp/JIRA-TicketManagement/blob/main/assets/createTicket.gif)
+
+
+
+
+
 
 ## 🔗 Links
 
