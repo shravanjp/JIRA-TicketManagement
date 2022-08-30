@@ -21,20 +21,6 @@ This project tracks the task/issue that is created and also each task is assigne
 **Client:** Javascript, CSS, HTML
 
 
-## How to Use
-
-Website Link
-```
-https://shravanjp.github.io/JIRA-TicketManagement/
-```
-
-- To create the task/ticket click on the **+** button and choose the priority.
-- To change Priority click on the **unlock** button then click on **color bar** on header of ticket then press **lock** button.
-- To modify the task click on **unlock**, modify then again click on **unlock**.
-- To filter, you can use **color(priority)** present in the navbar.
-- To delete the task/ticket click on the **⨯ (hamburger)** symbol, then click on the delete.**(Don't forget to again click on **⨯** after deleting)**
-
-
 ## Screenshot
 
 ![Create Ticket](https://github.com/shravanjp/JIRA-TicketManagement/blob/main/assets/ticket.png)
@@ -62,6 +48,21 @@ https://shravanjp.github.io/JIRA-TicketManagement/
     <td><img src="https://github.com/shravanjp/JIRA-TicketManagement/blob/main/assets/delete.gif"></td>
     </tr>
 </table>
+
+
+## How to Use
+
+Website Link
+```
+https://shravanjp.github.io/JIRA-TicketManagement/
+```
+
+- To create the task/ticket click on the **+** button and choose the priority.
+- To change Priority click on the **unlock** button then click on **color bar** on header of ticket then press **lock** button.
+- To modify the task click on **unlock**, modify then again click on **unlock**.
+- To filter, you can use **color(priority)** present in the navbar.
+- To delete the task/ticket click on the **⨯ (hamburger)** symbol, then click on the delete.**(Don't forget to again click on **⨯** after deleting)**
+
 
 
 ## 🔗 Links
