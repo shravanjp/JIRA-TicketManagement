@@ -54,7 +54,7 @@ This project tracks the task/issue that is created and also each task is assigne
 
 Website Link
 ```
-https://shravanjp.github.io/JIRA-TicketManagement/
+[!](https://shravanjp.github.io/JIRA-TicketManagement/)
 ```
 
 - To create the task/ticket click on the **+** button and choose the priority.
