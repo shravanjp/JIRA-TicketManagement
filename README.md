@@ -50,12 +50,11 @@ This project tracks the task/issue that is created and also each task is assigne
 </table>
 
 
-## How to Use
-
-Website Link
+## Website Link
 
 [https://shravanjp.github.io/JIRA-TicketManagement/](https://shravanjp.github.io/JIRA-TicketManagement/)
 
+## How to Use
 
 - To create the task/ticket click on the **+** button and choose the priority.
 - To change Priority click on the **unlock** button then click on **color bar** on header of ticket then press **lock** button.
